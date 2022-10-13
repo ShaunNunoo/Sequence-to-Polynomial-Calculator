@@ -160,13 +160,8 @@ vector<double> getPolynomialConstants()
     long elementSize = elementDerivatives.size();
     vector<double>polynomialIntegral = elementDerivatives[elementSize - 1];
 
-    for (long i = elementSize - 1; i > 0; i--)
-    {
-
+    for (long i = elementSize - 1; i > 0; i--)  
         polynomialIntegral = getVariables(polynomialIntegral, elementDerivatives[i - 1][0]);
-
-    }
-
     return polynomialIntegral;
 }
 
@@ -188,9 +183,7 @@ void displayPolynomial()
             cout << symbol(count, polynomial[i]) << polynomial[i] << x_component(i);
 
             if (i > 1)
-            {
-                cout << i;
-            }
+                cout << i;          
             count++;
         }
         cout << " ";
@@ -218,8 +211,6 @@ int main() {
 
     //Fills elementDerivative Matrix
     getInitalDerivative(elements);
-
     displayPolynomial();
-
     return 0;
 }
